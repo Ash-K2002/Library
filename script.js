@@ -37,16 +37,31 @@ const closeDialog=document.querySelector("#close-dialog");
 const deck=document.querySelector("#deck");
 
 //constructor for a book object
-function Book(title, author,pages, read, index){
-this.title=title;
-this.author=author;
-this.pages=pages;
-this.read=read;
-this.index=index;
-this.info=function (){
-    const status=(this.read)?'read':'not read';
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${status}`;
-}
+// function Book(title, author,pages, read, index){
+// this.title=title;
+// this.author=author;
+// this.pages=pages;
+// this.read=read;
+// this.index=index;
+// this.info=function (){
+//     const status=(this.read)?'read':'not read';
+//     return `${this.title} by ${this.author}, ${this.pages} pages, ${status}`;
+// }
+// }
+
+class Book{
+    constructor(title, author, pages, read, index){
+        this.title= title;
+        this.author=author;
+        this.pages=pages;
+        this.read=read;
+        this.index=index;
+    }
+
+    info(){
+        const status = (this.read)?'read':'not read';
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${status}`;
+    }
 }
 
 // adds book to library
